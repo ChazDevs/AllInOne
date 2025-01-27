@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  #hero a:hover {
+    text-decoration: none;
+    
+  }
+  .logo img {
+    max-width: 80px;
+  }
+  header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(/photos/multi_pic.jpg);
+    height: 100vh;
+    background-size:cover; /* Resize the image to cover the entire header */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position:center; /* Center the image */
+    background-color: #2c3e50d8;
+    color: #fffffff8;
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero h1 {
+    margin-top: 50px;
+    padding: 25px;
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Dark shadow */
+  }
+  
+  .hero p {
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Dark shadow */
+  }
+  
+  nav {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's always on top */
+  }
+
+  #about {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin: 0 auto; 
+    max-width: 800px; 
+    padding: 1rem;
+  }
+  
+  a {
+    text-decoration:underline;
+    font-weight: bold;
+    color: rgba(0, 143, 60, 0.795);
+    border-radius: 20px;
+  }
+
+  nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  nav a:hover {
+    background-color: rgba(0, 143, 60, 0.795);
+    border-radius: 20px;
+  }
+
+  nav .logo a:hover {
+    background-color: transparent; /* Disable background for the logo */
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav li {
+    margin: 0 1rem;
+  }
+
+  .section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2.1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Dark shadow */
+  }
+  
+  p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  /*
+  .gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .gallery-images {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .gallery img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 25px;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+  
+  button.prev {
+    left: 0;
+  }
+  
+  button.next {
+    right: 0;
+  }
+  */
+
+.carousel-inner img {
+  object-fit: contain; /* Ensures the image covers the space without distorting */
+  max-height: 80vh; /* Adjust this value to control the image height */
+  width: 50vh;
+}
+
+/* Customize the carousel control arrows */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: 50%; 
+  width: 40px; 
+  height: 40px; 
+}
+
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+
+#gallery {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+.carousel-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(90%);
+  background-color: rgba(0, 0, 0, 0.6); 
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  width: 25%; /* Make sure it doesn't go beyond the image */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Style for the gallery navigation arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+.prev {
+  left: 20px;  /* Adjust this to fine-tune the left arrow position */
+}
+
+.next {
+  right: 20px; /* Adjust this to fine-tune the right arrow position */
+}
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .testimonial {
+    background-color: #ecf0f1;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for both scale and shadow */
+  }
+
+  .testimonial:hover {
+    transform: scale(1.05); /* Slightly enlarges the testimonial */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 40px;
+  }
+  
+  footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Media Queries for responsiveness, adjust nav bar for different sizes */
+  @media (max-width: 768px) {
+    .gallery {
+      flex-direction: column;
+    }
+    
+    .gallery img {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    .section {
+      padding: 30px 10px;
+    }
+  
+    h2 {
+      font-size: 2em;
+    }
+
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.5); /* Grey background */
+      color: white; 
+      padding: 1px;
+      font-size: 14px; 
+  }
+
+  
+
+  img {
+      max-width: 100%; /* Ensure images fit within the screen */
+      height: auto;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column; /* Stack items */
+    padding: 10px;
+}
+
+nav a {
+    padding: 10px;
+    font-size: 14px; 
+    white-space: nowrap;
+}
+
+.hero {
+  height: auto; /* Let the content adjust */
+  padding: 20px;
+  background-size: cover; /* Ensure background image fits */
+}
+
+.hero h1 {
+  font-size: 24px; 
+}
+  }
+  
+  @media (max-width: 480px) {
+    header {
+      padding: 40px 10px;
+    }
+    
+    .hero h1 {
+      font-size: 2em;
+    }
+    
+    nav {
+      flex-direction: column;
+    }
+    
+    nav a {
+      padding: 15px 0;
+    }
+  }
+  
